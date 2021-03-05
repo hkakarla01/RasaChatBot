@@ -1,0 +1,126 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - Good
+    - Good, thanks!
+    - Doing great, thank you!
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - im happy
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: name
+  examples: |
+    - what's your name?
+    - what is your name?
+    - your name?
+    - can you tell your name please?
+- intent: myname
+  examples: |
+    - My name is Harsha
+    - My name is Ashish
+- intent: contact_details_email
+  examples: |
+    - My email id is test@gmail.com and my mobile number is 2340998990
+    - email is southern123@hotmail.com and phone 3459083458
+    - email id aa123@google.com and cell 234989098
+- intent: my_job_profile
+  examples: |
+    - I'm workig as Software developer
+    - I'm working as RPA Developer
+    - I'm working in IT
+    - I'm Pyhton developer
+    - I'm full stack developer
+    - I'm QA Manager
+- intent: bank_account
+  examples: |
+    - give me [bank account number] {"entity":"accountnumber"}
+    - enter your [bank account details] {"entity":"accountnumber"}
+    - tell me your [personal bank account details] {"entity":"accountnumber"}
+    - tell me your [checking account details] {"entity":"accountnumber"}
+    - enter your [savings account details] {"entity":"accountnumber"}
+- intent: nlu_fallback
+  examples: |
+    - what is the flight time to New York?
+    - What time is the deprature to China?
+- regex: email
+  examples: |
+    - "\w+@\w+.com"

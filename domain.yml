@@ -1,0 +1,84 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- mood_unhappy
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- bot_challenge
+- name
+- myname
+- contact_details_email
+- my_job_profile
+- bank_account
+- nlu_fallback
+entities:
+- accountnumber
+- email
+- phone-number
+slots:
+  email:
+    type: text
+    influence_conversation: true
+  phone-number:
+    type: text
+    influence_conversation: true
+  feedback:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hey {name}! How are you?
+    buttons:
+    - payload: /mood_great
+      title: mood great
+    - payload: /mood_unhappy
+      title: mood unhappy
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  - text: Happy to hear this!!
+  - text: Good to hear that.
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_my_name_is:
+  - text: My name is Robot. To know more about me vist [this link](https://en.wikipedia.org/wiki/Robo)
+  utter_your_name:
+  - text: What is your name?
+  utter_your_email:
+  - text: what's your email id and mobile number?
+  utter_your_job_id:
+  - text: What do you do for living?
+  utter_ask_email:
+  - text: enter the email id
+  utter_ask_phone-number:
+  - text: enter the phone number
+  utter_ask_feedback:
+  - text: enter your feedback
+  utter_default:
+  - text: Sorry I can't handle this
+actions:
+- action_default_fallback
+- action_hello_world
+- utter_cheer_up
+- utter_did_that_help
+forms:
+  userdetails_form:
+    email:
+    - type: from_entity
+      entity: email
+    phone-number:
+    - type: from_entity
+      entity: phone-number
+    feedback:
+    - type: from_text
